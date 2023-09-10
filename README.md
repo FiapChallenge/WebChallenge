@@ -1,11 +1,11 @@
 # HTMLGS
 
 <h1 align="center">
-🌾<br>AgroSolutionWeb
+🛜<br>WebChallenge 3
 </h1>
  
 <p align="center">
-<img src="GFX/logo/logo.png" alt="Logo AgroSolution" width=300>
+<img src="src/assets/GuincheiLogoRemake.png" alt="Logo AgroSolution" width=300>
 </p>
 
 > Repositório utilizado para a entrega do Challenge 3 de Web
