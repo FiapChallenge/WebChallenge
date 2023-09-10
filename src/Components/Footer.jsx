@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import GithubLogo from '../assets/icons/github.png'
 import YoutubeLogo from '../assets/icons/youtube.png'
-import GuincheiLogo from '../assets/GuincheiLogo.png'
+import GuincheiLogo from '../assets/GuincheiLogoRemake.png'
 import { NavLink } from 'react-router-dom';
 
 export default function () {

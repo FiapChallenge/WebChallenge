@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useRef } from 'react';
-import GuincheiLogo from '../assets/GuincheiLogo.png';
+import GuincheiLogo from '../assets/GuincheiLogoRemake.png';
 import './Nav.css';
 
 export default function Nav() {
