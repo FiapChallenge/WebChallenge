@@ -10,11 +10,11 @@ export default function index() {
     e.preventDefault();
     formsSection.current.style.backgroundImage = 'none';
     formsSection.current.innerHTML = `
-      <div className="success-message">
+      <div class="success-message">
       <h2>Solicitação enviada com sucesso!</h2>
       <p>Em breve entraremos em contato com você por e-mail.</p>
       <p>Obrigado por escolher o Guinchei!</p>
-      <a className='button' href="/">Voltar para a página inicial</a>
+      <a class='button' href="/">Voltar para a página inicial</a>
       </div>
     `;
   };
@@ -24,7 +24,7 @@ export default function index() {
     <main className='main-forms'>
       <section ref={formsSection} className="forms-section">
         <h1 id="title">Solicitar Guincho</h1>
-        <form className="form-flex">
+        <form className="form-flex" onSubmit={submitClick}>
           <div className="row">
             <div className="form-group ">
               <label className="label" htmlFor="name">Nome Completo </label>
@@ -44,7 +44,7 @@ export default function index() {
             <input className="input-form extended" type="text" name="acidente" id="acidente" placeholder="Endereço" required />
           </div>
           <p id="hint-subtitle">Todos os campos são obrigatórios</p>
-          <input ref={submitBtn} onSubmit={submitClick} type="submit" value="Pedir o Guincho" className="button" />
+          <input ref={submitBtn} type="submit" value="Pedir o Guincho" className="button" />
         </form>
       </section>
     </main>

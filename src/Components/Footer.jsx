@@ -3,7 +3,7 @@ import './Footer.css';
 import GithubLogo from '../assets/icons/github.png';
 import YoutubeLogo from '../assets/icons/youtube.png';
 import GuincheiLogo from '../assets/GuincheiLogoRemake.png';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function () {
     return (
@@ -21,9 +21,9 @@ export default function () {
                     </div>
                     <div className="categoria-footer">
                         <h6>Navegação</h6>
-                        <NavLink exact activeClassName="active" to='/'>Home</NavLink>
-                        <NavLink activeClassName="active" to='/contato'>Contato</NavLink>
-                        <NavLink activeClassName="active" to='/solicitar-guincho'>Solicite o Guincho</NavLink>
+                        <Link to='/'>Home</Link>
+                        <Link to='/contato'>Contato</Link>
+                        <Link to='/solicitar-guincho'>Solicite o Guincho</Link>
                     </div>
                     <div className="categoria-footer">
                         <h6>Integrantes - RM</h6>

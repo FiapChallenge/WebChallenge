@@ -58,6 +58,12 @@ export default function index() {
           <li>Gabriel Gribl de Carvalho <br /> RM: 96270</li>
         </ul>
       </section>
+      <section>
+        <div className="container-link">
+          <h1>☁️| Link Repositório Github</h1>
+          <a href='https://github.com/FiapChallenge/WebChallenge' target='_blank'>https://github.com/FiapChallenge/WebChallenge</a>
+        </div>
+      </section>
     </main>
   );
 }

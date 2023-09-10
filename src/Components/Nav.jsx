@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useRef } from 'react';
 import GuincheiLogo from '../assets/GuincheiLogoRemake.png';
@@ -20,50 +20,67 @@ export default function Nav() {
     const navbar = useRef();
 
 
-    let prevScrollpos = window.scrollY;
-    window.onscroll = function () {
-        let currentScrollPos = window.scrollY;
-        if (prevScrollpos > currentScrollPos || currentScrollPos < 64 || isOpen) {
-            navbar.current.style.transform = "translateY(0)";
-        } else {
-            navbar.current.style.transform = "translateY(-100%)";
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const controlNavbar = () => {
+        if (typeof window !== 'undefined') {
+            if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+                setShow(false);
+            } else { // if scroll up show the navbar
+                setShow(true);
+            }
+
+            // remember current page location to use in the next move
+            setLastScrollY(window.scrollY);
         }
-        prevScrollpos = currentScrollPos;
     };
 
-    // window.addEventListener('click', function (e) {
-    //     if (!toggleBtn.current.contains(e.target) && !dropDownMenu.current.contains(e.target)) {
-    //         dropDownMenu.current.classList.remove('open');
-    //         setIsOpen(true);
-    //         toggleBtnIcon.current.classList = 'fa solid fa-bars';
-    //     }
-    //     if (dropDownMenu.current.contains(e.target)) {
-    //         dropDownMenu.current.classList.remove('open');
-    //         setIsOpen(true);
-    //         toggleBtnIcon.current.classList = 'fa solid fa-bars';
-    //     }
-    // });
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', controlNavbar);
+
+            // cleanup function
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
+        }
+    }, [lastScrollY]);
+
+    const closeOpenMenus = (e) => {
+        if (dropDownMenu.current === undefined) return;
+        if (e.target !== toggleBtnIcon.current && e.target !== toggleBtn.current && e.target !== dropDownMenu.current) {
+            dropDownMenu.current.classList.remove('open');
+        }
+
+        if (dropDownMenu.current.classList.contains('open')) {
+            toggleBtnIcon.current.classList = 'fa-solid fa-xmark';
+        } else {
+            toggleBtnIcon.current.classList = 'fa-solid fa-bars';
+        }
+    };
+    document.addEventListener('click', closeOpenMenus);
 
 
 
     return (
         <header>
-            <nav id="navbar" ref={navbar}>
+            <nav id="navbar" className={`${show ? 'show' : 'hidden'}`} ref={navbar}>
                 <Link to={'/'} id="logo" href="index.html"><img src={GuincheiLogo} alt="logo AgroSolution" /></Link>
                 <div id="nav-middle" className="navigation-nav">
-                    <NavLink exact='true' activeclassname="active" to='/'>Home</NavLink>
-                    <NavLink activeClassName="active" to='/contato'>Contato</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : 'none')} to='/'>Home</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : 'none')} to='/contato'>Contato</NavLink>
                 </div>
                 <div id="nav-right" className="navigation-nav">
-                    <NavLink id="contato" activeclassname="active" to='/solicitar-guincho'>Solicite o Guincho</NavLink>
+                    <NavLink id="contato" className={({ isActive }) => (isActive ? "active" : 'none')} to='/solicitar-guincho'>Solicite o Guincho</NavLink>
                 </div>
                 <div className="toggle-btn" ref={toggleBtn} onClick={dropdown}>
                     <i className="fa-solid fa-bars" ref={toggleBtnIcon}></i>
                 </div>
-                <div className="dropdown-menu" ref={dropDownMenu}>
-                    <NavLink exact activeclassname="active" to='/'>Home</NavLink>
-                    <NavLink activeclassname="active" to='/contato'>Contato</NavLink>
-                    <NavLink id="contato-dropwdown" activeclassname="active" to='/solicitar-guincho'>Solicite o Guincho</NavLink>
+                <div className='dropdown-menu' ref={dropDownMenu}>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : 'none')} to='/'>Home</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : 'none')} to='/contato'>Contato</NavLink>
+                    <NavLink id="contato-dropwdown" className={({ isActive }) => (isActive ? "active" : 'none')} to='/solicitar-guincho'>Solicite o Guincho</NavLink>
                 </div>
             </nav>
         </header>

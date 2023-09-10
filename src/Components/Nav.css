@@ -32,6 +32,10 @@ nav {
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
+#navbar.hidden {
+    transform: translateY(-100%);
+}
+
 
 #navbar {
     opacity: 1;
