@@ -190,6 +190,10 @@ iframe {
 }
 
 @media (max-width: 1011px) {
+    #guincho-img {
+        margin-top: 64px;
+    }
+
     div.textos-section {
         margin: 0px;
         display: flex;
@@ -198,6 +202,7 @@ iframe {
         justify-content: center;
         gap: 24px;
     }
+
     div.textos-section>div.title>p {
         margin: 0px;
         display: inline;
@@ -218,4 +223,34 @@ iframe {
     div.textos-section>a.linkbutton {
         margin-left: 0px
     }
+}
+
+@media (max-width: 630px) {
+    #guincho-img {
+        width: 300px;
+        height: 300px;
+    }
+
+    div.textos-section>div.title>p:nth-child(2) {
+        display: block;
+        margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.textos-section>div.title>p:nth-child(3) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section.hero {
+        gap: 24px;
+    }
+
+    div.subtitle {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

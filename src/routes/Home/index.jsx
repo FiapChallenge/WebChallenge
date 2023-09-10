@@ -7,23 +7,23 @@ export default function index() {
   return (
     <div>
       <section className='hero'>
-        <div class="textos-section">
+        <div className="textos-section">
           <div className="title">
             <p>Chamou!</p>
             <p>Chegou!</p>
             <p>Guinchou!</p>
           </div>
-          <div class="subtitle">
+          <div className="subtitle">
             <p>Não fique na mão. O guincho perfeito para você a poucos clicks de distância!</p>
           </div>
-          <Link to={'./solicitar-guincho'} class="linkbutton">Solicite o Guincho</Link>
+          <Link to={'./solicitar-guincho'} className="linkbutton">Solicite o Guincho</Link>
         </div>
         <img id="guincho-img" src={GuinchoAzul} alt="Guincho levando carro com técnico do lado" />
       </section>
-      <section class="about">
+      <section className="about">
         <div className="about-text">
           <h1>Sobre o Projeto</h1>
-          <p class="subtitle-about">Pedir o guincho certo nunca foi tão fácil. A revolução na forma de chamar
+          <p className="subtitle-about">Pedir o guincho certo nunca foi tão fácil. A revolução na forma de chamar
             guinchos,
             adicionado a boa e velha IA. Confira o vídeo:</p>
         </div>
