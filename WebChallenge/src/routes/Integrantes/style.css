@@ -1,10 +1,4 @@
-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-h1 {
+.container-cards>h1 {
     width: 100%;
     text-align: center;
     color: #00a7ef;
@@ -68,7 +62,6 @@ h1 {
     padding: 10px 15px;
     color: #111;
     text-align: center;
-
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -88,13 +81,15 @@ h1 {
     flex-wrap: wrap;
     list-style: none;
     text-decoration: none;
+    gap: 64px;
 }
 
 .lista-flex>li {
     font-weight: 500;
     text-align: center;
-    margin-left: 64px;
     font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .lista-flex>h1 {
@@ -103,6 +98,10 @@ h1 {
 }
 
 .lista-flex>li:nth-child(2) {
-    margin-left: -64px;
-    margin-bottom: 72px;
+    margin-bottom: 36px;
+}
+
+.lista-flex {
+    margin: 0;
+    padding: 0;
 }

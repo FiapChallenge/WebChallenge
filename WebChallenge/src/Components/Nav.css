@@ -26,8 +26,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue);
-    width: calc(100vw - 32px);
-    padding: 0px 16px;
+    width: calc(100vw - 64px);
+    padding: 0px 32px;
+    gap: 12px;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
@@ -121,7 +122,6 @@ nav .toggle-btn {
 }
 
 #nav-right {
-    flex: 1;
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -140,7 +140,7 @@ nav .toggle-btn {
     text-decoration: none;
     text-align: center;
     color: var(--white);
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
 }
@@ -188,7 +188,7 @@ a[href="./pages/login"] {
     padding: 8px 16px;
     color: var(--white);
     background-color: var(--lightblue);
-    font-size: 24px;
+    font-size: 23px;
     border-radius: 12px;
     transition: all 0.3s ease-in-out;
 }
