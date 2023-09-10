@@ -13,10 +13,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Error/>,
+    // errorElement: <Error />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/integrantes', element: <Integrantes /> },
+      { path: '/contato', element: <Integrantes /> },
       { path: '/solicitar-guincho', element: <SolicitarGuincho /> },
     ],
   },
