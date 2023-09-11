@@ -27,7 +27,7 @@ export default function index() {
             guinchos,
             adicionado a boa e velha IA. Confira o vídeo:</p>
         </div>
-        <iframe src="https://www.youtube.com/embed/p385kZR-jL8?si=tfH15wcBWEdxm9o7" title="YouTube video player" frameBorder="0"
+        <iframe src="https://www.youtube.com/embed/fJ7NEAQQQZo?si=v5zFzRR7zOoF9pIF" title="YouTube video player" frameBorder="0"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen></iframe>
       </section>
