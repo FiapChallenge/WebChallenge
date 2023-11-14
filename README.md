@@ -24,6 +24,7 @@
 | -------------- | ------------------------------------- |
 | *Curso*        | Análise e Desenvolvimento de Sistemas |
 | *Disciplina*   | RESPONSIVE WEB DEVELOPMENT            |
+| *Professor*    | Alexandre Carlos de Jesus            |
 | *Turma*        | 1TDSS                                 |
 
 <h2 name="autores">✍️ Integrantes</h2>
